@@ -5,4 +5,5 @@ Metatranscriptomics is an exciting new area of inquiry with important applicatio
 Note for later: Use this "sra tools fastq dump"
 
 fastqc download -> https://github.com/s-andrews/FastQC/releases
+
 fastqc screen downlaod -> https://github.com/StevenWingett/FastQ-Screen/releases/tag/v0.15.2
