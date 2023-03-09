@@ -130,3 +130,11 @@ dmypy.json
 
 #mac nonsense
 *.DS_Store
+
+# output data
+out/*
+flags/*
+
+# snakemake files
+.snakemake/*
+.snakemake

@@ -1,0 +1,7 @@
+include: "01-fastqc.smk"
+
+ruleorder: fastqc
+
+rule all:
+    input:
+        "flags/fastqc.done"
