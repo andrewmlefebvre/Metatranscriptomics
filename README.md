@@ -9,3 +9,4 @@ Note for later: Use this "sra tools fastq dump"
 - conda install -c bioconda fastqc
 - conda install -c bioconda snakemake
 - conda install -c bioconda trimmomatic
+- conda install -c bioconda ucsc-fastqtofa
