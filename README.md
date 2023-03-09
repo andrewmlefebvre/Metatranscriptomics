@@ -4,8 +4,8 @@ Metatranscriptomics is an exciting new area of inquiry with important applicatio
 
 Note for later: Use this "sra tools fastq dump"
 
-##Conda Instals Required
+## Conda Instals Required
 
--conda install -c bioconda fastqc
--conda install -c bioconda snakemake
--conda install -c bioconda trimmomatic
+- conda install -c bioconda fastqc
+- conda install -c bioconda snakemake
+- conda install -c bioconda trimmomatic
