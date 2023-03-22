@@ -136,8 +136,8 @@ out/*
 flags/*
 !flags/.gitkeep
 Rcorrector/*
-lib/*
-!lib/.gitkeep
+snakelib/*
+!snakelib/.gitkeep
 
 # snakemake files
 .snakemake/*

@@ -7,9 +7,9 @@ rule rcorrectorDependencies:
         touch('flags/rcorrectorDependencies.done')
     shell:
         '''
-        if [ ! -d "lib/Rcorrector" ]; then
-            (cd lib; git clone https://github.com/mourisl/Rcorrector.git)
-            (cd lib/Rcorrector; make)
+        if [ ! -d "snakelib/Rcorrector" ]; then
+            (cd snakelib; git clone https://github.com/mourisl/Rcorrector.git)
+            (cd snakelib/Rcorrector; make)
         fi
         '''      
 
@@ -21,5 +21,5 @@ rule rcorrector:
         touch('out/test.txt')
     shell:
         '''
-        perl lib/Rcorrector/run_rcorrector.pl -s data/SRR000676.fastq -od out -t 35
+        perl snakelib/Rcorrector/run_rcorrector.pl -s data/SRR000676.fastq -od out -t 35
         '''      
