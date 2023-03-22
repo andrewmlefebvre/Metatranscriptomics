@@ -134,6 +134,7 @@ dmypy.json
 # output data
 out/*
 flags/*
+!flags/.gitkeep
 
 # snakemake files
 .snakemake/*
