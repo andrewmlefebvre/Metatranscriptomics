@@ -135,6 +135,9 @@ dmypy.json
 out/*
 flags/*
 !flags/.gitkeep
+Rcorrector/*
+lib/*
+!lib/.gitkeep
 
 # snakemake files
 .snakemake/*
