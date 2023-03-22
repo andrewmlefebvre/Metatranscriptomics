@@ -1,7 +1,9 @@
 include: "01-fastqc.smk"
+include: "02-rcorrector.smk"
 
-ruleorder: fastqc
+ruleorder: fastqc > rcorrectorDependencies > rcorrector
 
 rule all:
     input:
-        "flags/fastqc.done"
+        #"flags/fastqc.done"
+        'out/test.txt'
