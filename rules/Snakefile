@@ -3,8 +3,3 @@ include: "02-rcorrector.smk"
 include: "03-trimmomatic.smk"
 
 ruleorder: fastqc > rcorrectorDependencies > rcorrector > trimmomatic
-
-rule all:
-    input:
-        #"flags/fastqc.done"
-        'out/test.txt'

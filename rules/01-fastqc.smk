@@ -2,11 +2,12 @@
 
 
 rule fastqc:
+    input:
+        'data/SRR000676.fastq.gz'
     output:
-        # No actual output from bash
+        'out/SRR000676_fastqc.html',
         touch('flags/fastqc.done')
     shell:
         '''
-        rm -f out/* 
         fastqc data/SRR000676.fastq.gz -o out
         '''

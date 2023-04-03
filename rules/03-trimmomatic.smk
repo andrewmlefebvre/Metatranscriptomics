@@ -2,9 +2,9 @@
 
 rule trimmomatic:
     input:
-        "out/rcorrector.done"
+        "flags/rcorrector.done"
     output:
-        touch('out/test.txt')
+        'out/outputfile.trim.fq'
     shell:
         #              input                 output                 Trimming options 
         '''            

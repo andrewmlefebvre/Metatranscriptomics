@@ -18,7 +18,7 @@ rule rcorrector:
         #Require fastqc ran correctly
         'flags/rcorrectorDependencies.done'
     output:
-        touch('out/rcorrector.done')
+        touch('flags/rcorrector.done')
     shell:
         '''
         perl snakelib/Rcorrector/run_rcorrector.pl -s data/SRR000676.fastq -od out -t 35
