@@ -4,7 +4,8 @@ rule trimmomatic:
     input:
         "flags/rcorrector.done"
     output:
-        'out/outputfile.trim.fq'
+        'out/outputfile.trim.fq',
+        touch('flags/final.done')
     shell:
         #              input                 output                 Trimming options 
         '''            
