@@ -3,11 +3,11 @@
 
 rule fastqc:
     input:
-        'data/SRR000676.fastq.gz'
+        'data/SRR000676Small.fastq'
     output:
-        'out/SRR000676_fastqc.html',
+        'out/SRR000676Small_fastqc.html',
         touch('flags/fastqc.done')
     shell:
         '''
-        fastqc data/SRR000676.fastq.gz -o out
+        fastqc data/SRR000676Small.fastq -o out
         '''

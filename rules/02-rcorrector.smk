@@ -21,5 +21,5 @@ rule rcorrector:
         touch('flags/rcorrector.done')
     shell:
         '''
-        perl snakelib/Rcorrector/run_rcorrector.pl -s data/SRR000676.fastq -od out -t 35
+        perl snakelib/Rcorrector/run_rcorrector.pl -s data/SRR000676Small.fastq -od out -t 35
         '''      
