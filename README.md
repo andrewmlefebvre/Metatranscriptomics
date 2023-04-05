@@ -11,7 +11,7 @@ Note for later: Use this "sra tools fastq dump"
 - pip install khmer
 - pip install snakemake
 
-##Installs Installed During Pipline Setup
+## Installs Installed During Pipline Setup
 
 - Rcorrector
 - Kraken2
