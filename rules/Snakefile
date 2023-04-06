@@ -1,5 +1,6 @@
-include: "01-fastqc.smk"
-include: "02-rcorrector.smk"
-include: "03-trimmomatic.smk"
+include: "preassembly/01-fastqc.smk"
+include: "preassembly/02-rcorrector.smk"
+include: "preassembly/03-trimmomatic.smk"
+#include: "preassembly/04-kraken2.smk"
 
-ruleorder: fastqc > rcorrectorDependencies > rcorrector > trimmomatic
+include: "postassembly/01-bellerophon.smk"

@@ -1,3 +1,5 @@
+configfile: "config.yaml" 
+
 
 rule rcorrectorDependencies:
     input:
@@ -15,11 +17,11 @@ rule rcorrectorDependencies:
 
 rule rcorrector:
     input:
-        #Require fastqc ran correctly
-        'flags/rcorrectorDependencies.done'
+        'flags/rcorrectorDependencies.done',
+        inputFile = config['inputDir'] + '/' + config['inputFile']
     output:
-        touch('flags/rcorrector.done')
+        ('out/'+config['inputFile'].split('.')[0]+'.cor.fq')
     shell:
         '''
-        perl snakelib/Rcorrector/run_rcorrector.pl -s data/SRR000676Small.fastq -od out -t 35
+        perl snakelib/Rcorrector/run_rcorrector.pl -s {input.inputFile} -od out -t 35
         '''      

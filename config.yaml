@@ -1,0 +1,13 @@
+inputDir: data
+inputFile: SRR000676Small.fastq
+
+outputDir: out
+
+Trailing: 3
+SlidingWindowA: 2
+SlidingWindowB: 18
+MinLen: 40
+Phred: phred33
+
+
+
