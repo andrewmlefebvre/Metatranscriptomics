@@ -8,7 +8,7 @@ rule kraken2Dependencies:
     shell:
         '''
             if [ ! -d "snakelib/Kraken2" ]; then
-                (cd snakelib; git clone https://github.com/DerrickWood/kraken2.git)
+                (cd snakelib; git clone https://github.com/djperrone/kraken2.git)
                 (cd snakelib/kraken2; bash install_kraken2.sh .)
             fi    
         '''
