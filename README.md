@@ -4,18 +4,17 @@ Metatranscriptomics is an exciting new area of inquiry with important applicatio
 
 Note for later: Use this "sra tools fastq dump"
 
-## Installs Required
+## Installs Required (Recommended Install Method)
 
-- conda install -c bioconda fastqc
-- conda install -c bioconda trimmomatic
-- pip install snakemake
-
-## Other install needed
-
+- fastqc (conda install -c bioconda fastqc)
+- trimmomatic (conda install -c bioconda trimmomatic)
+- snakemake (pip3 install snakemake)
 - Perl
 - Python3
-- Make
+- Make (sudo apt install make)
 - Zlib (sudo apt install zlib1g-dev)
+- gcc (sudo apt install gcc)
+- g++ (sudo apt install g++)
 
 ## Installs Installed During Pipline Setup
 
