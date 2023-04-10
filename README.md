@@ -15,6 +15,7 @@ Note for later: Use this "sra tools fastq dump"
 - Perl
 - Python3
 - Make
+- Zlib (sudo apt install zlib1g-dev)
 
 ## Installs Installed During Pipline Setup
 
