@@ -9,14 +9,16 @@ Note for later: Use this "sra tools fastq dump"
 - fastqc (conda install -c bioconda fastqc)
 - trimmomatic (conda install -c bioconda trimmomatic)
 - snakemake (pip3 install snakemake)
-- Perl
-- Python3
 - Make (sudo apt install make)
 - Zlib (sudo apt install zlib1g-dev)
 - gcc (sudo apt install gcc)
 - g++ (sudo apt install g++)
 - Trinity (conda install -c bioconda trinity)
 - Oases (conda install -c bioconda oases)
+
+- Perl
+- Python3
+- java 11+
 
 ## Installs Installed During Pipline Setup
 
