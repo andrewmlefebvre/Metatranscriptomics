@@ -16,6 +16,7 @@ Note for later: Use this "sra tools fastq dump"
 - gcc (sudo apt install gcc)
 - g++ (sudo apt install g++)
 - Trinity (conda install -c bioconda trinity)
+- Oases (conda install -c bioconda oases)
 
 ## Installs Installed During Pipline Setup
 
