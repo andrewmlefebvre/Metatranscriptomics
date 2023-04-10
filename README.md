@@ -15,6 +15,7 @@ Note for later: Use this "sra tools fastq dump"
 - Zlib (sudo apt install zlib1g-dev)
 - gcc (sudo apt install gcc)
 - g++ (sudo apt install g++)
+- Trinity (conda install -c bioconda trinity)
 
 ## Installs Installed During Pipline Setup
 
