@@ -8,8 +8,13 @@ Note for later: Use this "sra tools fastq dump"
 
 - conda install -c bioconda fastqc
 - conda install -c bioconda trimmomatic
-- pip install jproperties
 - pip install snakemake
+
+## Other install needed
+
+- Perl
+- Python3
+- Make
 
 ## Installs Installed During Pipline Setup
 
