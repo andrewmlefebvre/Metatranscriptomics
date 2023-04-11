@@ -1,6 +1,6 @@
 include: "preassembly/01-fastqc.smk"
 include: "preassembly/02-rcorrector.smk"
 include: "preassembly/03-trimmomatic.smk"
-#include: "preassembly/04-kraken2.smk"
+include: "preassembly/04-kraken2.smk"
 
-include: "postassembly/01-bellerophon.smk"
+#include: "postassembly/01-bellerophon.smk"
