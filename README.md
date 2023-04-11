@@ -15,7 +15,6 @@ Note for later: Use this "sra tools fastq dump"
 - g++ (sudo apt install g++)
 - Trinity (conda install -c bioconda trinity)
 - Oases (conda install -c bioconda oases)
-
 - Perl
 - Python3
 - java 11+
