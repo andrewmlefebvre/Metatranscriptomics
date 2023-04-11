@@ -1,5 +1,5 @@
 inputDir: data
-inputFile: SRR000676Small.fastq
+inputFile: SRR000676Medium.fastq
 
 outputDir: out
 
@@ -8,6 +8,8 @@ SlidingWindowA: 2
 SlidingWindowB: 18
 MinLen: 40
 Phred: phred33
+
+trinityMaxMem: 10G
 
 
 

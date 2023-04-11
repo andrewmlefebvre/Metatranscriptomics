@@ -3,4 +3,6 @@ include: "preassembly/02-rcorrector.smk"
 include: "preassembly/03-trimmomatic.smk"
 #include: "preassembly/04-kraken2.smk"
 
-include: "postassembly/01-bellerophon.smk"
+include: "assembly/01-trinity.smk"
+
+include: "postassembly/01-rnaquast.smk"
