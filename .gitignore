@@ -142,3 +142,7 @@ snakelib/*
 # snakemake files
 .snakemake/*
 .snakemake
+
+# busco
+busco_downloads/*
+busco_downloads

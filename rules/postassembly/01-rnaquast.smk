@@ -13,15 +13,15 @@ rule rnaquastDependencies:
             (cd snakelib; git clone https://github.com/ablab/rnaquast.git)
         fi
         '''    
-
+   
 rule rnaquast:
     input:
         'flags/rnaquastDependencies.done',
         'out/Trinity.fasta',
         'out/Trinity.fasta.gene_trans_map'
     output:
-        touch('flags/final.done')   
+        touch('flags/rnaquast.done')   
     shell:    
         '''    
-        echo todo
+        python3 snakelib/rnaquast/rnaQUAST.py -c out/Trinity.fasta -o out/rnaquast
         ''' 

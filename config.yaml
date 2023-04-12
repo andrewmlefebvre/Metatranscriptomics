@@ -11,5 +11,8 @@ Phred: phred33
 
 trinityMaxMem: 10G
 
+meanFragmentLength: 200
+fragmentSD: 30
+
 
 
