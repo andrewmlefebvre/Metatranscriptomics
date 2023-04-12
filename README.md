@@ -18,6 +18,12 @@ Note for later: Use this "sra tools fastq dump"
 - Perl
 - Python3
 - java 11+
+- gffutils (conda install -c bioconda gffutils)
+- matplotlib (conda install -c conda-forge matplotlib)
+- joblib (conda install -c anaconda joblib)
+- gmap (conda install -c bioconda gmap)
+- blast (conda install -c bioconda blast)
+- kallisto (conda install -c bioconda kallisto)
 
 ## Installs Installed During Pipline Setup
 
