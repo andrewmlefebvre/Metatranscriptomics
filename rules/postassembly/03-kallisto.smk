@@ -13,13 +13,13 @@ rule kallistoIndex:
 rule kallisto:
     input:
         'out/Trinity.index',
-        ('out/'+config['inputFile'].split('.')[0]+'.trim.fq')
+        ('out/'+config['inputFile'].split('.')[0]+'.kraken.fq')
     output:
         touch('flags/kallisto.done')
     params:
         meanLength = config['meanFragmentLength'],
         lengthSD = config['fragmentSD'],
-        inputFq = ('out/'+config['inputFile'].split('.')[0]+'.trim.fq')
+        inputFq = ('out/'+config['inputFile'].split('.')[0]+'.kraken.fq')
     shell:
         '''
         kallisto quant -i out/Trinity.index -o out/kallisto --single -l {params.meanLength} -s {params.lengthSD} {params.inputFq}

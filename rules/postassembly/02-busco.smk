@@ -4,7 +4,7 @@ configfile: "config.yaml"
 rule busco:
     input:
         'out/Trinity.fasta',
-        ('out/'+config['inputFile'].split('.')[0]+'.trim.fq')   
+        ('out/'+config['inputFile'].split('.')[0]+'.kraken.fq')   
     output:
         touch('flags/busco.done') 
     shell:

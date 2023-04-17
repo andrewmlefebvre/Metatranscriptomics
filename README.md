@@ -24,6 +24,7 @@ Note for later: Use this "sra tools fastq dump"
 - gmap (conda install -c bioconda gmap)
 - blast (conda install -c bioconda blast)
 - kallisto (conda install -c bioconda kallisto)
+- chardet (pip3 install chardet)
 
 ## Installs Installed During Pipline Setup
 

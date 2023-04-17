@@ -1,5 +1,6 @@
 inputDir: data
 inputFile: SRR000676Medium.fastq
+runKraken2: False
 
 outputDir: out
 
@@ -13,6 +14,7 @@ trinityMaxMem: 10G
 
 meanFragmentLength: 200
 fragmentSD: 30
+
 kdb: /dev/sda4/kdb2
 
 
