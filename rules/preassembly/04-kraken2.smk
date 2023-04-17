@@ -2,8 +2,8 @@
 
 rule kraken2Dependencies:
     input:
-        #'flags/fastqc.done'
-	'out/outputfile.trim.fq'
+        'flags/fastqc.done'
+#	'out/outputfile.trim.fq'
     output:
         touch('flags/kraken2Dependencies.done')
     shell:
@@ -17,11 +17,16 @@ rule kraken2Dependencies:
 rule kraken2:
     input:
         'flags/kraken2Dependencies.done',
-#        'out/outputfile.trim.fq'    
+	inputfile = ('out/'+config['inputFile'].split('.')[0]+'.trim.fq')
+	   
     output:
-        touch('flags/final.done')       
+        touch('flags/final.done'),
+	outputFile = ('out/'+config['inputFile'].split('.')[0]+'.kraken.fq')       
+    params:
+        kdb = (config['kdb']) 
     shell:
         '''
-	echo "kraken todo"
+	./snakelib/kraken2/kraken2 --db {params.kdb} --report out/kraken2_report.report --classified-out out/kraken2.classified --unclassified-out {output.outputFile} --use-names {input.inputfile} > out/kraken2_report.out
+	#echo params.kdb
 	'''
 	

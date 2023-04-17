@@ -1,5 +1,5 @@
 inputDir: data
-inputFile: SRR000676Small.fastq
+inputFile: SRR000676Small_kraken_test.fq
 
 outputDir: out
 
