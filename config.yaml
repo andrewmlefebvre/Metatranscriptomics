@@ -13,6 +13,6 @@ trinityMaxMem: 10G
 
 meanFragmentLength: 200
 fragmentSD: 30
-
+kdb: /dev/sda4/kdb2
 
 

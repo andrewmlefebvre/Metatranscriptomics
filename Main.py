@@ -8,5 +8,5 @@ if __name__ == '__main__':
     os.system("sudo rm -f -r out/* ")
     os.system("rm -f flags/* ")
     # Run from start
-    os.system("snakemake  --snakefile rules/Snakefile --cores 1 flags/kallisto.done flags/rnaquast.done flags/busco.done")   
-
+    #os.system("snakemake  --snakefile rules/Snakefile --cores 1 flags/kallisto.done flags/rnaquast.done flags/busco.done")   
+    os.system("snakemake  --snakefile rules/Snakefile --cores 1 flags/kraken.done")

@@ -1,11 +1,11 @@
 include: "preassembly/01-fastqc.smk"
 include: "preassembly/02-rcorrector.smk"
 include: "preassembly/03-trimmomatic.smk"
-#include: "preassembly/04-kraken2.smk"
+include: "preassembly/04-kraken2.smk"
 
-include: "assembly/01-trinity.smk"
+#include: "assembly/01-trinity.smk"
 
-include: "postassembly/01-rnaquast.smk"
-include: "postassembly/02-busco.smk"
-include: "postassembly/03-kallisto.smk"
+#include: "postassembly/01-rnaquast.smk"
+#include: "postassembly/02-busco.smk"
+#include: "postassembly/03-kallisto.smk"
 
