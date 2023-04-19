@@ -1,3 +1,6 @@
+configfile: "config.yaml" 
+
+import os
 
 rule kraken2Dependencies:
     input:
@@ -16,14 +19,15 @@ rule kraken2Dependencies:
 rule kraken2:
     input:
         'flags/kraken2Dependencies.done',
-	inputfile = ('out/'+config['inputFile'].split('.')[0]+'.trim.fq')
-	   
+	    inputfile = ('out/'+config['inputFile'].split('.')[0]+'.trim.fq')
     output:
         touch('flags/kraken.done'),
-	outputFile = ('out/'+config['inputFile'].split('.')[0]+'.kraken.fq')       
+	    outputFile = ('out/'+config['inputFile'].split('.')[0]+'.kraken.fq')       
     params:
         kdb = (config['kdb']) 
-    shell:
-        '''
-	./snakelib/kraken2/kraken2 --db {params.kdb} --report out/kraken2_report.report --classified-out out/kraken2.classified --unclassified-out {output.outputFile} --use-names {input.inputfile} > out/kraken2_report.out
-	'''
+    run:
+        if config['runKraken2']:
+            os.system("./snakelib/kraken2/kraken2 --db {params.kdb} --report out/kraken2_report.report --classified-out out/kraken2.classified --unclassified-out {output.outputFile} --use-names {input.inputfile} > out/kraken2_report.out")
+        else:
+            print("---Skipping kraken2---")
+            os.system("mv "+('out/'+config['inputFile'].split('.')[0]+'.trim.fq')+" "+('out/'+config['inputFile'].split('.')[0]+'.kraken.fq') )
