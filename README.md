@@ -25,6 +25,9 @@ Note for later: Use this "sra tools fastq dump"
 - blast (conda install -c bioconda blast)
 - kallisto (conda install -c bioconda kallisto)
 - chardet (pip3 install chardet)
+- trinotate (conda install -c bioconda trinotate)
+- transdecoder (conda install -c bioconda transdecoder)
+- seqtk (conda install -c bioconda seqtk)
 
 ## Installs Installed During Pipline Setup
 

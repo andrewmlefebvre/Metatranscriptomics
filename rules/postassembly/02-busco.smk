@@ -10,5 +10,5 @@ rule busco:
     shell:
         '''
         docker pull ezlabgva/busco:v5.4.4_cv1
-        docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v5.4.4_cv1 busco -f -i out/Trinity.fasta -o out/busco -m genome
+        docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v5.4.4_cv1 busco -f -i out/Trinity.fasta -o out/busco -m transcriptome        
         '''              

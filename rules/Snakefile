@@ -11,3 +11,5 @@ include: "postassembly/01-rnaquast.smk"
 include: "postassembly/02-busco.smk"
 include: "postassembly/03-kallisto.smk"
 
+include: "annotation/01-transdecoder.smk"
+include: "annotation/02-trinotate.smk"
