@@ -30,4 +30,4 @@ rule kraken2:
             os.system("./snakelib/kraken2/kraken2 --db {params.kdb} --report out/kraken2_report.report --classified-out out/kraken2.classified --unclassified-out {output.outputFile} --use-names {input.inputfile} > out/kraken2_report.out")
         else:
             print("---Skipping kraken2---")
-            os.system("mv "+('out/'+config['inputFile'].split('.')[0]+'.trim.fq')+" "+('out/'+config['inputFile'].split('.')[0]+'.kraken.fq') )
+            os.system("cp "+('out/'+config['inputFile'].split('.')[0]+'.trim.fq')+" "+('out/'+config['inputFile'].split('.')[0]+'.kraken.fq') )

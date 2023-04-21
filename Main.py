@@ -9,12 +9,9 @@ def setup():
     
     parser.add_argument('-i', help='Input file', type=str)
     parser.add_argument('-kdb', help='Path to database for kraken2 contaminant removal', type=str)
-    parser.add_argument('--run-kraken', help='Indicator to skip kraken2 contaminaint removal', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--run-kraken', help='Indicator to run kraken2 contaminaint removal', action=argparse.BooleanOptionalAction)
     
     args = vars(parser.parse_args())
-
-    with open("out/runargs.json", "w") as outfile:
-        json.dump(args, outfile) 
     
     out = "--config"
     if args['i'] != None:
@@ -47,12 +44,12 @@ if __name__ == '__main__':
     out = setup()
 
     # Delete all previous outputs
-    os.system("snakemake  --snakefile rules/Snakefile --unlock --delete-all-output --cores 1")
-    os.system("sudo rm -f -r out/* ")
-    os.system("rm -f flags/* ")
+    #os.system("snakemake  --snakefile rules/Snakefile --unlock --delete-all-output --cores 1")
+    #os.system("sudo rm -f -r out/* ")
+    #os.system("rm -f flags/* ")
 
     # Run from start
-    os.system("snakemake  --snakefile rules/Snakefile --cores 1 flags/kallisto.done flags/rnaquast.done flags/busco.done "+out)   
+    os.system("snakemake  --snakefile rules/Snakefile --cores 1 out/transdecoder/longest_orfs.pep "+out)   
 #    os.system("snakemake  --snakefile rules/Snakefile --cores 1 flags/kraken.done")
 
 
