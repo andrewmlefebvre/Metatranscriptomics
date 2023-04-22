@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "mini_sprot.pep",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "my_db/mini_sprot.pep",
+  "number-of-letters": 123039,
+  "number-of-sequences": 408,
+  "last-updated": "2023-04-22T01:33:00",
+  "number-of-volumes": 1,
+  "bytes-total": 214091,
+  "bytes-to-cache": 126824,
+  "files": [
+    "mini_sprot.pep.pdb",
+    "mini_sprot.pep.phr",
+    "mini_sprot.pep.pin",
+    "mini_sprot.pep.pot",
+    "mini_sprot.pep.psq",
+    "mini_sprot.pep.ptf",
+    "mini_sprot.pep.pto"
+  ]
+}

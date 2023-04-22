@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "sample_assembly.fasta.transdecoder.pep",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "../sample_assembly.fasta.transdecoder.pep",
+  "number-of-letters": 10120,
+  "number-of-sequences": 74,
+  "last-updated": "2023-04-22T01:32:00",
+  "number-of-volumes": 1,
+  "bytes-total": 64925,
+  "bytes-to-cache": 10939,
+  "files": [
+    "sample_assembly.fasta.transdecoder.pep.pdb",
+    "sample_assembly.fasta.transdecoder.pep.phr",
+    "sample_assembly.fasta.transdecoder.pep.pin",
+    "sample_assembly.fasta.transdecoder.pep.pot",
+    "sample_assembly.fasta.transdecoder.pep.psq",
+    "sample_assembly.fasta.transdecoder.pep.ptf",
+    "sample_assembly.fasta.transdecoder.pep.pto"
+  ]
+}

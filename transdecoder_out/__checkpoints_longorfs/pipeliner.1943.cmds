@@ -1,0 +1,1 @@
+/home/new/Metatranscriptomics/snakelib/transdecoder/util/compute_base_probs.pl data/sample_assembly.fasta 0 > /home/new/Metatranscriptomics/sample_assembly.fasta.transdecoder_dir/base_freqs.dat
