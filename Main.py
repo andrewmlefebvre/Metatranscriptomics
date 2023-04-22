@@ -49,7 +49,7 @@ if __name__ == '__main__':
     #os.system("rm -f flags/* ")
 
     # Run from start
-    os.system("snakemake  --snakefile rules/Snakefile --cores 1 out/transdecoder/longest_orfs.pep "+out)   
+    os.system("snakemake  --snakefile rules/Snakefile --cores 1 flags/test.done "+out)   
 #    os.system("snakemake  --snakefile rules/Snakefile --cores 1 flags/kraken.done")
 
 
