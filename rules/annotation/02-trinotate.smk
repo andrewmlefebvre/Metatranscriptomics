@@ -94,7 +94,10 @@ rule trinotate:
         'out/trinotate/trinotate_annotation_report.xls'
     shell:
         '''
-            cp data/util/Trinotate.sqlite out/trinotate/Trinotate.sqlite
+            (cd out/trinotate; wget https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES_sample_data_only/Trinotate.sample_data_only_boilerplate.sqlite.gz;)
+            (cd out/trinotate; gzip -d Trinotate.sample_data_only_boilerplate.sqlite.gz;)
+            (cd out/trinotate; mv Trinotate.sample_data_only_boilerplate.sqlite Trinotate.sqlite)
+
             Trinotate out/trinotate/Trinotate.sqlite init \
             --gene_trans_map out/Trinity.fasta.gene_trans_map \
             --transcript_fasta out/Trinity.fasta \
