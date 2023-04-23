@@ -35,7 +35,7 @@ rule blastx:
 rule blastp:
     input:
         'out/trinotate/blastx.outfmt6',
-        #'out/transdecoder/longest_orfs.pep',
+        'out/transdecoder/longest_orfs.pep',
         'out/Trinity.fasta'
     output:
         'out/trinotate/blastp.outfmt6'
@@ -52,17 +52,59 @@ rule blastp:
 
 rule hmmscan:
     input:
-        #'out/transdecoder/longest_orfs.pep',
+        'out/transdecoder/longest_orfs.pep',
         'out/trinotate/blastp.outfmt6'
     output:
-        touch('flags/test.done')
+        'out/trinotate/TrinotatePFAM.out'
     shell:
         '''
             mkdir -p out/hmmscan
             (cd out/hmmscan; wget https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES_sample_data_only/Pfam-A.hmm)
-            hmpress out/hmmscan/Pfam-A.hmm
+            hmmpress out/hmmscan/Pfam-A.hmm
             hmmscan --cpu 2 \
             --domtblout out/trinotate/TrinotatePFAM.out \
             out/hmmscan/Pfam-A.hmm out/transdecoder/longest_orfs.pep > out/trinotate/pfam.log
         '''        
 
+
+rule signalp:
+    input:
+        'out/transdecoder/longest_orfs.pep',
+        'out/Trinity.fasta'
+    output:
+        'out/trinotate/signalp.out'
+    shell:
+        '''
+            (cd data/util/signalp-5.0b/bin; ./signalp -fasta ../../../../out/Trinity.fasta -stdout > ../../../../out/trinotate/signalp.out)
+        '''    
+
+#TODO? Does not seem to work with any attempted perl versions
+#rule tmhmm:
+
+rule trinotate:
+    input:
+        'out/transdecoder/longest_orfs.pep',
+        'out/Trinity.fasta',
+        'out/Trinity.fasta.gene_trans_map',
+        'out/trinotate/blastp.outfmt6',
+        'out/trinotate/blastx.outfmt6',
+        'out/trinotate/signalp.out',
+        'out/trinotate/TrinotatePFAM.out'
+    output:
+        'out/trinotate/trinotate_annotation_report.xls'
+    shell:
+        '''
+            cp data/util/Trinotate.sqlite out/trinotate/Trinotate.sqlite
+            Trinotate out/trinotate/Trinotate.sqlite init \
+            --gene_trans_map out/Trinity.fasta.gene_trans_map \
+            --transcript_fasta out/Trinity.fasta \
+            --transdecoder_pep out/transdecoder/longest_orfs.pep
+
+            Trinotate out/trinotate/Trinotate.sqlite LOAD_swissprot_blastp out/trinotate/blastp.outfmt6
+            Trinotate out/trinotate/Trinotate.sqlite LOAD_swissprot_blastx out/trinotate/blastx.outfmt6
+            Trinotate out/trinotate/Trinotate.sqlite LOAD_pfam out/trinotate/TrinotatePFAM.out
+            #Trinotate out/trinotate/Trinotate.sqlite LOAD_tmhmm out/trinotate/tmhmm.out
+            Trinotate out/trinotate/Trinotate.sqlite LOAD_signalp out/trinotate/signalp.out
+
+            Trinotate out/trinotate/Trinotate.sqlite report > out/trinotate/trinotate_annotation_report.xls
+        '''

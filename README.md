@@ -28,8 +28,9 @@ Note for later: Use this "sra tools fastq dump"
 - trinotate (conda install -c bioconda trinotate)
 - transdecoder (conda install -c bioconda transdecoder)
 - seqtk (conda install -c bioconda seqtk)
+- signalp (https://services.healthtech.dtu.dk/services/SignalP-6.0/)
 
-## Installs Installed During Pipline Setup
+## Installed During Pipline Setup
 
 - Rcorrector
 - Kraken2
