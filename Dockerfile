@@ -1,5 +1,6 @@
 FROM ubuntu
 
+ARG DEBIAN_FRONTEND=noninteractive
 # Install Conda
 RUN apt-get update \
     && apt-get install -y wget \
@@ -10,11 +11,11 @@ RUN apt-get update \
     && /opt/conda/bin/conda init bash
 
 # Install Linux dependencies
-RUN apt-get install -y make zlib1g-dev gcc g++ python3-pip
+RUN apt-get install -y make zlib1g-dev gcc g++ python3-pip trinityrnaseq
 
 # Set up Conda environment
 COPY environment.yml /
-RUN /opt/conda/bin/conda env create -f /environment.yml && \
+RUN /opt/conda/bin/conda env create -f /environment.yml --force && \
     /opt/conda/bin/conda clean -afy
 ENV PATH /opt/conda/envs/my_env/bin:$PATH
 
