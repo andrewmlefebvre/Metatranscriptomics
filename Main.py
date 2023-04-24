@@ -8,7 +8,7 @@ def setup():
                     description='Metatranscripomic Pipeline')
     
     parser.add_argument('-i', help='Input file', type=str)
-    parser.add_argument('-o', help='Input directory', type=str)
+    parser.add_argument('-o', help='Output directory', type=str)
     parser.add_argument('-kdb', help='Path to database for kraken2 contaminant removal', type=str)
     parser.add_argument('--run-kraken', help='Indicator to run kraken2 contaminaint removal', action=argparse.BooleanOptionalAction)
     
