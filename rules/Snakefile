@@ -13,3 +13,15 @@ include: "postassembly/03-kallisto.smk"
 
 include: "annotation/01-transdecoder.smk"
 include: "annotation/02-trinotate.smk"
+
+rule out:
+    input:
+        'out/trinotate/trinotate_annotation_report.xls'
+    output:
+        'flags/final.done'
+    params:
+        outputDir = config['outputDir']    
+    shell:
+        '''
+        mv -v out/* {params.outputDir}
+        '''
