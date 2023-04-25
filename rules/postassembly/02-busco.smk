@@ -7,7 +7,6 @@ rule buscoDependencies:
         '''
         if [ ! -d "snakelib/busco" ]; then
             (cd snakelib; git clone https://gitlab.com/ezlab/busco.git)
-            (cd snakelib/busco; python3 setup.py install --user)
         fi
         '''      
 
@@ -20,5 +19,6 @@ rule busco:
         touch('flags/busco.done') 
     shell:
         '''
-            busco -f -i out/Trinity.fasta -o out/busco -m transcriptome        
+        docker pull ezlabgva/busco:v5.4.4_cv1
+        docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v5.4.4_cv1 busco -f -i out/Trinity.fasta -o out/busco -m transcriptome
         '''              
