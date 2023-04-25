@@ -23,5 +23,5 @@ rule out:
         outputDir = config['outputDir']    
     shell:
         '''
-        mv -v out/* {params.outputDir}
+        cp -v out/* {params.outputDir}
         '''

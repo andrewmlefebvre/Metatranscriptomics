@@ -146,3 +146,6 @@ snakelib/*
 # busco
 busco_downloads/*
 busco_downloads
+
+
+/sratoolkit.3.0.2-ubuntu64

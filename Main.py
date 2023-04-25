@@ -58,11 +58,11 @@ if __name__ == '__main__':
     out = setup()
 
     # Delete all previous outputs
-    os.system("snakemake  --snakefile rules/Snakefile --unlock --delete-all-output --cores 1")
+    os.system("snakemake  --snakefile rules/Snakefile --unlock --delete-all-output --cores 2")
     os.system("sudo rm -f -r out/* ")
     os.system("sudo touch out/.gitkeep")
     os.system("rm -f flags/* ")
 
     # Run from start
     print(out)
-    os.system("snakemake  --snakefile rules/Snakefile --cores 1 flags/final.done "+out)   
+    os.system("snakemake  --keep-going --snakefile rules/Snakefile --cores 1 out/trinotate/trinotate_annotation_report.xls "+out)   
