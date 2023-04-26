@@ -75,7 +75,8 @@ rule signalp:
         'out/trinotate/signalp.out'
     shell:
         '''
-            (cd data/util/signalp-5.0b/bin; ./signalp -fasta ../../../../out/Trinity.fasta -stdout > ../../../../out/trinotate/signalp.out)
+            echo todo
+            #(cd data/util/signalp-5.0b/bin; ./signalp -fasta ../../../../out/Trinity.fasta -stdout > ../../../../out/trinotate/signalp.out)
         '''    
 
 #TODO? Does not seem to work with any attempted perl versions
@@ -88,7 +89,7 @@ rule trinotate:
         'out/Trinity.fasta.gene_trans_map',
         'out/trinotate/blastp.outfmt6',
         'out/trinotate/blastx.outfmt6',
-        'out/trinotate/signalp.out',
+        #'out/trinotate/signalp.out',
         'out/trinotate/TrinotatePFAM.out'
     output:
         'out/trinotate/trinotate_annotation_report.xls'
@@ -106,8 +107,9 @@ rule trinotate:
             Trinotate out/trinotate/Trinotate.sqlite LOAD_swissprot_blastp out/trinotate/blastp.outfmt6
             Trinotate out/trinotate/Trinotate.sqlite LOAD_swissprot_blastx out/trinotate/blastx.outfmt6
             Trinotate out/trinotate/Trinotate.sqlite LOAD_pfam out/trinotate/TrinotatePFAM.out
+            #Due to liscense issue these have to be enabled manually to use
             #Trinotate out/trinotate/Trinotate.sqlite LOAD_tmhmm out/trinotate/tmhmm.out
-            Trinotate out/trinotate/Trinotate.sqlite LOAD_signalp out/trinotate/signalp.out
+            #Trinotate out/trinotate/Trinotate.sqlite LOAD_signalp out/trinotate/signalp.out
 
             Trinotate out/trinotate/Trinotate.sqlite report > out/trinotate/trinotate_annotation_report.xls
         '''
