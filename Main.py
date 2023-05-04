@@ -65,4 +65,4 @@ if __name__ == '__main__':
 
     # Run from start
     print(out)
-    os.system("snakemake  --keep-going --snakefile rules/Snakefile --cores 1 out/trinotate/trinotate_annotation_report.xls "+out)   
+    os.system("snakemake  --keep-going --snakefile rules/Snakefile --cores 19 out/trinotate/trinotate_annotation_report.xls "+out)   

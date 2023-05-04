@@ -27,7 +27,7 @@ rule kraken2:
         kdb = (config['kdb']) 
     run:
         if config['runKraken2']:
-            os.system("./snakelib/kraken2/kraken2 --db "+config['kdb']+" --report out/kraken2_report.report --classified-out out/kraken2.classified --unclassified-out "+('out/'+config['inputFile'].split('.')[0]+'.kraken.fq') +"  "+('out/'+config['inputFile'].split('.')[0]+'.trim.fq')+" > out/kraken2_report.out")
+            os.system("./snakelib/kraken2/kraken2 --db "+config['kdb']+" --threads 39 --report out/kraken2_report.report --classified-out out/kraken2.classified --unclassified-out "+('out/'+config['inputFile'].split('.')[0]+'.kraken.fq') +"  "+('out/'+config['inputFile'].split('.')[0]+'.trim.fq')+" > out/kraken2_report.out")
         else:
             print("---Skipping kraken2---")
             os.system("cp "+('out/'+config['inputFile'].split('.')[0]+'.trim.fq')+" "+('out/'+config['inputFile'].split('.')[0]+'.kraken.fq') )

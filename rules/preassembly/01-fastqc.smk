@@ -9,5 +9,5 @@ rule fastqc:
         outputDir = config['outputDir']
     shell:
         '''
-        fastqc {input.inputFile} -o {params.outputDir}
+        fastqc {input.inputFile} -o {params.outputDir} -t 39
         '''

@@ -2,7 +2,7 @@ configfile: "config.yaml"
 
 rule transdecoder:
     input:
-        'flags/kallisto.done', 'flags/rnaquast.done', 'flags/busco.done'
+        'flags/kallisto.done', 'flags/rnaquast.done'
     output:
         'out/transdecoder/longest_orfs.pep'
     shell:

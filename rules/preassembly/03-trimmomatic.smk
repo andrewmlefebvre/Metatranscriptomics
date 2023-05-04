@@ -14,5 +14,5 @@ rule trimmomatic:
     shell:
         #              input              output             Trimming options 
         '''         
-        trimmomatic SE {input.inputFile} {output.outputFile} TRAILING:{params.trailing} SLIDINGWINDOW:{params.window} MINLEN:{params.minLen} -{params.phred}   
+        trimmomatic SE {input.inputFile} {output.outputFile} TRAILING:{params.trailing} SLIDINGWINDOW:{params.window} MINLEN:{params.minLen} -{params.phred} -threads 39   
         '''    

@@ -6,8 +6,8 @@ rule makeblastdb:
         'out/Trinity.fasta',
         'data/mini_sprot.pep'
     output:
-        'out/trinotate/mini_sprot.pep',
-        'out/trinotate/mini_sprot.pep.pdb'   
+        'out/trinotate/mini_sprot.pep'
+        #'out/trinotate/mini_sprot.pep.pdb'   
     shell:
         '''
             mkdir -p out/trinotate
@@ -27,7 +27,7 @@ rule blastx:
         '''
             blastx -query out/Trinity.fasta \
             -db out/trinotate/mini_sprot.pep \
-            -num_threads 8 \
+            -num_threads 39 \
             -max_target_seqs 1 \
             -outfmt 6 > out/trinotate/blastx.outfmt6
         '''    
@@ -43,7 +43,7 @@ rule blastp:
         '''
             blastp -query out/transdecoder/longest_orfs.pep \
             -db out/trinotate/mini_sprot.pep \
-            -num_threads 8 \
+            -num_threads 39 \
             -max_target_seqs 1 \
             -outfmt 6 > out/trinotate/blastp.outfmt6
         '''            
@@ -61,7 +61,7 @@ rule hmmscan:
             mkdir -p out/hmmscan
             (cd out/hmmscan; wget https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES_sample_data_only/Pfam-A.hmm)
             hmmpress out/hmmscan/Pfam-A.hmm
-            hmmscan --cpu 2 \
+            hmmscan --cpu 19 \
             --domtblout out/trinotate/TrinotatePFAM.out \
             out/hmmscan/Pfam-A.hmm out/transdecoder/longest_orfs.pep > out/trinotate/pfam.log
         '''        

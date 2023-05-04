@@ -23,5 +23,5 @@ rule rcorrector:
         ('out/'+config['inputFile'].split('.')[0]+'.cor.fq')
     shell:
         '''
-        perl snakelib/Rcorrector/run_rcorrector.pl -s {input.inputFile} -od out 
+        perl snakelib/Rcorrector/run_rcorrector.pl -s {input.inputFile} -od out -t 39 
         '''      
