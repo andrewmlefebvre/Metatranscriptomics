@@ -13,7 +13,7 @@ rule trinityDependencies:
             if [ ! -d "snakelib/trinity" ]; then
                 (cd snakelib; wget https://github.com/trinityrnaseq/trinityrnaseq/releases/download/Trinity-v2.14.0/trinityrnaseq-v2.14.0.FULL.tar.gz; tar -xvzf trinityrnaseq-v2.14.0.FULL.tar.gz; mv trinityrnaseq-v2.14.0 trinity; rm trinityrnaseq-v2.14.0.FULL.tar.gz)
                 (cd trinity; make)
-                (cd ..)
+                
             fi
         '''
 

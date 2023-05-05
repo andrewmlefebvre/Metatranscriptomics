@@ -8,6 +8,6 @@ rule transdecoder:
     shell:
         '''
         (cd out; TransDecoder.LongOrfs -t Trinity.fasta --output_dir transdecoder)
-        (cd out; TransDecoder.Predict -t Trinity.fasta --output_dir transdecoder)
+       # (cd out; TransDecoder.Predict -t Trinity.fasta --output_dir transdecoder)
         '''
 

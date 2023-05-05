@@ -138,6 +138,9 @@ flags/*
 Rcorrector/*
 snakelib/*
 !snakelib/.gitkeep
+final_out
+final_out_kdb
+bag1_out_kdb
 
 # snakemake files
 .snakemake/*
