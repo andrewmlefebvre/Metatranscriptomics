@@ -8,9 +8,13 @@ Pip Dependencies: requirements.txt
 
 # Usage
 
-The MarMMA pipline can be installed using "docker pull andrewmlefebvre/marmma"
+The MarMMA pipline can be installed using the conda and pip dependecy lists. While in the root directory execute the following
 
-It can then be run with "docker run -it andrewmlefebvre/marmma {arguments}"
+apt-get install -y make zlib1g-dev gcc g++ python3-pip
+
+conda env create -f environment.yml --force
+
+pip install -r requirements.txt --no-cache-dir
 
 ## Required
 -i : Input file path
